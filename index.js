@@ -27,3 +27,13 @@ const strongPassword = (len) => {
 
   return result;
 };
+
+
+const createAccount = (user, generatePassword) => {
+  return `jmeno: ${user}, heslo:  ${generatePassword(10)}`;
+};
+
+document.body.innerHTML += `<p>${createAccount('Iryna', weakPassword)}</p>
+                            <p>${createAccount('Anna', mediumPassword)}</p>
+                            <p>${createAccount('Alla', strongPassword)}</p>
+`;
